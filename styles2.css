@@ -1,0 +1,276 @@
+/*----------------------------------------ГЛАВНАЯ СТРАНИЦА, ШАПКА, ТЕЛО, ПОДВАЛ-------------------------------------------*/
+
+body {
+    margin:  5;  /*Задает все свойства заполнения в одном объявлении*/
+    padding: 5;  /*Устанавливает все свойства полей в одном объявлении*/
+    font-family: 'Times New Roman', Times, serif;  /*Задает семейство шрифтов для текста*/
+    background-image: url(img/Fonaiti2.jpg);   /*Задание одного или нескольких фоновых изображений для элемента*/
+    background-attachment: fixed;   /*Определяет, прокручивается ли фоновое изображение с остальной частью страницы, или зафиксировано*/
+    background-size: 100%;   /*Определяет размер фоновых изображений*/
+}
+
+.content {
+    background-color: rgba(244, 238, 238, 0.146);  /*Задает цвет четырех границ*/
+    margin: 30px;
+    padding: 30px;
+    border-radius: 10px; /*Сокращенное свойство для установки всех четырех границ-*-свойства RADIUS*/
+    color: #fff;
+}
+
+h1 {
+    text-align: center;   /*Выравнивания текста по центу*/
+}
+
+header {
+    background-color: rgba(135, 7, 240, 0.468);
+    color: #fff;  /*Задает цвет текста*/
+    padding: 15px;
+}
+
+nav ul {
+    margin: 0%;
+    padding: 0%;
+    list-style: none;  /*Задает все свойства для списка в одном объявлении*/
+}
+
+nav ul li {
+    display: inline-block;  /*Указывает, как должен отображаться определенный элемент HTML*/
+    margin-right: 20px;  /*Задает правое поле элемента*/
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;  /*Указывает украшение, добавляемое в текст*/
+}
+
+nav a:hover {
+    color: rgb(red, green, blue);
+    font-style: italic;  /*Задает стиль шрифта для текста*/
+}
+
+
+
+
+.menu {
+    width: 50px; /* ширина полоски */
+    background-color: rgba(135, 7, 240, 0.468);
+    transition: width 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+.menu:hover {
+    width: 200px; /* ширина раскрытого меню */
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+.menu li:hover {
+    background-color: #444;
+}
+.menu img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.menu .text {
+    display: none;
+    color: #fff;
+}
+.menu:hover .text {
+    display: inline;
+}
+
+
+/*------------------------------------------ABOUT, СТРАНИЦА ВТОРАЯ-------------------------------------------------*/
+
+.portfolio{
+    padding: 20px;
+    color: #fff;
+}
+
+.about, .contact{
+    margin-bottom: 30px;
+}
+
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(135, 7, 240, 0.468);
+    color: #ffffff;
+}
+
+
+h1{
+    text-align: center;
+}
+
+
+
+
+.plans-container { 
+    display: grid;
+    gap: 20px; /* Расстояние между блоками */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  /*Свойства, задающие размеры и количество колонок или рядов грид-раскладки соответственно.*/
+}
+
+.plan-block {
+    width: 220px;
+    height: 125px;
+    background-color: rgba(135, 7, 240, 0.468);
+    border-radius: 15px;
+    text-align: center;
+    padding: 1%;
+    transition: transform 1s ease-in-out; /* Плавное увеличение */
+    cursor: pointer;
+}
+
+/* Эффект увеличения при наведении */
+.plan-block:hover {
+    transform: scale(1.10); /* Увеличение на 10% */
+}
+
+/*------------------------------------------ABOUT2, СТРАНИЦА ТРЕТЬЯ-------------------------------------------------*/
+
+
+table{
+	width: 800px;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+    background-color: rgba(135, 7, 240, 0.215);
+}
+
+th, td{
+	border: 2px solid rgba(135, 7, 240, 0.468);
+	text-align: center;
+	padding: 10px;
+}
+
+
+.button{
+	background-color: rgba(135, 7, 240, 0.468);
+	color: #006400;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+.button:hover{
+	background-color: #20b2aa;
+}
+
+
+/*-------------------------------------------CONTACS, СТРАНИЦА ЧЕТВЁРТАЯ------------------------------------------*/
+
+
+.contacs{
+    background-color: rgba(135, 7, 240, 0.468);
+    color: #fff;
+    margin: 25px;
+    padding: auto;
+}
+
+
+/*-------------------------------------------АДАПТИВНАЯ ВЁРСТКА----------------------------------------------------*/
+
+
+
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #ccc;
+    padding: 10px 0;
+}
+
+.mobile-menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+/* Медиа запросы для мобильного разрешения */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+    }
+
+    .plan-block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    .plans-container {
+        flex-direction: column;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+}
+
+
+/* Стили для планшетов */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .plan-block {
+        width: calc(50% - 20px); /* Два элемента в ряд */
+    }
+
+    .plans-container {
+        justify-content: space-between;
+    }
+}
+
+
+/*-------------------------------------------------------fffffffffffffffffff-----------------------------------------------*/
+
+
+/* Скрываем дополнительные описания */
+.plan-block .description {
+    display: none;
+}
+
+/* Раскрытое состояние */
+.plan-block.active .description {
+    display: block;
+}
+
+/* Оформление активных ссылок меню */
+nav ul li a.active-link {
+    color: blue;
+}
+
+/* Переходы */
+.menu-item-hide {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-item-show {
+    opacity: 1;
+}
